@@ -1,4 +1,8 @@
 #pragma once
 #include "CodeDef.h"
 #include <json/json.h>
-void inline set_content(Json::Value& res, int code = OK);
+#define set_content(resjson,code) Json::Value json;\
+json["code"] = code;\
+json["res"] = res;\
+res.status = 200;\
+res.set_content(json.toStyledString(), "application/json");\

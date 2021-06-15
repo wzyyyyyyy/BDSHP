@@ -1,11 +1,11 @@
 #include "pch.h"
 #include <thread>
+#include <memory>
+std::shared_ptr<httplib::Server> server;
 void entry() {
 	std::thread([] {
-		httplib::Server server;
-		server.Get("/hi", [](const httplib::Request& req, httplib::Response& res) {
-			res.status = 200;
-			res.set_content("", "application / json");
+		server = std::make_shared<httplib::Server>();
+		server->Get("/hi", [](const httplib::Request& req, httplib::Response& res) {
 			});
 	}).detach();
 }

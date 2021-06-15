@@ -10,4 +10,5 @@
 // 添加要在此处预编译的标头
 #include <iostream>
 #include <httplib.h>
+extern std::shared_ptr<httplib::Server> server;
 #endif //PCH_H

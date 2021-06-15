@@ -18,6 +18,12 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CodeDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -29,10 +35,16 @@
     <ClCompile Include="entry.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\LiteLoader.lib">
       <Filter>资源文件</Filter>
     </Library>
+    <Library Include="..\lib\libcrypto.lib" />
+    <Library Include="..\lib\libssl.lib" />
+    <Library Include="..\lib\jsoncpp.lib" />
   </ItemGroup>
 </Project>

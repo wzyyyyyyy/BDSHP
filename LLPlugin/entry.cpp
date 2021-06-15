@@ -1,6 +1,11 @@
 #include "pch.h"
-
+#include <thread>
 void entry() {
-	//插件载入时会调用这个函数
-	std::cout << "Hello World!\n";
+	std::thread([] {
+		httplib::Server server;
+		server.Get("/hi", [](const httplib::Request& req, httplib::Response& res) {
+			res.status = 200;
+			res.set_content("", "application / json");
+			});
+	}).detach();
 }
